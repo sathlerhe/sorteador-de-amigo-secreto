@@ -6,6 +6,11 @@ export const participantsList = atom<string[]>({
 });
 
 export const errorState = atom<string>({
-  key: 'errorState',
-  default: ''
-})
+  key: "errorState",
+  default: "",
+});
+
+export const sweepstakeResult = atom<Map<string, string>>({
+  key: "sweepstakeResult",
+  default: new Map(),
+});
