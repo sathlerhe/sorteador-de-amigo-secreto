@@ -6,10 +6,17 @@ import useParticipantsList from "../state/hooks/useParticipantsList";
 jest.mock("../state/hooks/useParticipantsList");
 
 const mockNavigate = jest.fn();
+const mockSweepstake = jest.fn();
 
 jest.mock("react-router-dom", () => {
   return {
     useNavigate: () => mockNavigate,
+  };
+});
+
+jest.mock("../state/hooks/useRandomizer", () => {
+  return {
+    useRandomizer: () => mockSweepstake,
   };
 });
 
@@ -62,5 +69,6 @@ describe("When exist enougth participants", () => {
 
     expect(mockNavigate).toBeCalledTimes(1)
     expect(mockNavigate).toBeCalledWith('/sorteio')
+    expect(mockSweepstake).toBeCalledTimes(1)
   });
 });

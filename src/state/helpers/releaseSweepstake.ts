@@ -7,7 +7,7 @@ export function releaseSweepstake(participants: string[]) {
   const result = new Map<string, string>();
 
   for (let i = 0; i < participantsTotal; i++) {
-    const secretFriendIndex = i === participantsTotal - 1 ? 0 : i++;
+    const secretFriendIndex = i === participantsTotal - 1 ? 0 : i + 1;
     result.set(randomParticipants[i], randomParticipants[secretFriendIndex]);
   }
 

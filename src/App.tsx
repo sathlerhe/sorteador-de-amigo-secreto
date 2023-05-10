@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import Form from './components/Form';
+import Config from './pages/Config';
+import Sweepstake from './pages/Sweepstake';
 
 function App() {
   return (
     <BrowserRouter>
       <RecoilRoot>
         <Routes>
-          <Route path='/' element={Form} />
+          <Route path='/' element={<Config />} />
+          <Route path='/sorteio' element={<Sweepstake />} />
         </Routes>
       </RecoilRoot>
     </BrowserRouter>
